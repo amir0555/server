@@ -1,5 +1,0 @@
-node_modules
-test
-Dockerfile
-.dockerignore
-docker-compose*
