@@ -1,41 +1,41 @@
-version: '3'
-services:
- nginx:
-  image: nginx:stable-alpine
-  ports:
-   - "80:80"
- escrowme:
-  build:
-   context: .
-   args:
-     - NODE_ENV:"production"
-  volumes:
-   - ./src/uploads:/app/uploads
-  environment:
-   - NODE_ENV=production
-   - SERVER:${SERVER}
-   - DB_URL:${DB_URL}
-   - DB_USER:${DB_USER}
-   - DB_PASS:${DB_PASS}
-   - DB_NAME:${DB_NAME}
-   - DB_PORT:${DB_PORT}
-   - JWT_SECRET:${JWT_SECRET}
-   - CLIENT_URL:${CLIENT_URL}
-   - EMAIL_ADDRESS:${EMAIL_ADDRESS}
-   - PASSWORD_EMAIL:${PASSWORD_EMAIL}
-   - CHARGILY_APP_KEY:${CHARGILY_APP_KEY}
-   - CHARGILY_APP_SECRET:${CHARGILY_APP_SECRET}
-   - BACK_URL:${BACK_URL}
-   - WEBHOOK_URL:${WEBHOOK_URL}
-  command: npm start
- socket:
-  build: .
-  environment:
-   - NODE_ENV=production
-   - PORT:${PORT}
-  command: npm run dev1
- mongodb:
-    image: mongo
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+# version: '3'
+# services:
+#  nginx:
+#   image: nginx:stable-alpine
+#   ports:
+#    - "80:80"
+#  escrowme:
+#   build:
+#    context: .
+#    args:
+#      - NODE_ENV:"production"
+#   volumes:
+#    - ./src/uploads:/app/uploads
+#   environment:
+#    - NODE_ENV=production
+#    - SERVER:${SERVER}
+#    - DB_URL:${DB_URL}
+#    - DB_USER:${DB_USER}
+#    - DB_PASS:${DB_PASS}
+#    - DB_NAME:${DB_NAME}
+#    - DB_PORT:${DB_PORT}
+#    - JWT_SECRET:${JWT_SECRET}
+#    - CLIENT_URL:${CLIENT_URL}
+#    - EMAIL_ADDRESS:${EMAIL_ADDRESS}
+#    - PASSWORD_EMAIL:${PASSWORD_EMAIL}
+#    - CHARGILY_APP_KEY:${CHARGILY_APP_KEY}
+#    - CHARGILY_APP_SECRET:${CHARGILY_APP_SECRET}
+#    - BACK_URL:${BACK_URL}
+#    - WEBHOOK_URL:${WEBHOOK_URL}
+#   command: npm start
+#  socket:
+#   build: .
+#   environment:
+#    - NODE_ENV=production
+#    - PORT:${PORT}
+#   command: npm run dev1
+#  mongodb:
+#     image: mongo
+#     environment:
+#       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+#       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
