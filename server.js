@@ -38,3 +38,6 @@ process.on("unhandledRejection", (err) => {
     process.exit(1);
   });
 });
+
+// -- NAMECHEAP VPS PASSWORD --- //
+// Password: 8fcWPklWBGX94p67u5
