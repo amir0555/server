@@ -23,7 +23,7 @@ const start = () => {
     .connect(`${process.env.DB_URL}`, { useUnifiedTopology: true })
     .then(() => {
       app.listen(PORT, () => {
-        console.log(`server is listening on  http://localhost:${PORT}`);
+        console.log(`server is listening on  http://localhost:${SERVER}`);
       });
     })
     .catch((error) => console.log(error));
